@@ -1,0 +1,74 @@
+/* Styles */
+html {
+	font-size: 62.5%;
+    font-size: calc(1.6rem + 1vw);
+    font-family: Calibri;
+}
+
+body {
+	background-image: url("pictures/background_river.jpg");
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
+
+  	margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+    box-sizing: border-box;
+}
+
+header {
+	text-align: center;
+	background-color: white;
+}
+
+/* Classes */
+/* Memory Game */
+.game {
+	width: 800px;
+	height: 800px;
+
+	/* Centers */
+	margin: auto;
+
+	display: flex;
+	flex-wrap: wrap;
+	/*background-color: gray;*/
+	perspective: 700px
+}
+
+.card {
+	position: relative;
+	width: calc(25% - 20px);
+	height: calc(33.33% - 20px);
+	margin: 10px;
+
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform .2s;
+}
+
+.card:active {
+	transform: scale(0.96);
+	transition: transform .2s;
+}
+
+.card.flipCard {
+	transform: rotateY(180deg);
+	transition: transform .2s;
+}
+
+.front, .back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background-color: yellow;
+	border-radius: 10px;
+	backface-visibility: hidden;
+}
+
+.front {
+	transform: rotateY(180deg);
+}
