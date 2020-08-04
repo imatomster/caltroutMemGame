@@ -29,7 +29,7 @@ header {
 	width: 800px;
 	height: 800px;
 
-	/* Centers */
+	/* Centers the Game to screen */
 	margin: auto;
 
 	display: flex;
@@ -49,12 +49,13 @@ header {
 	transition: transform .2s;
 }
 
-.card:active {
+.card:hover {
 	transform: scale(0.96);
 	transition: transform .2s;
+	cursor: pointer;
 }
 
-.card.flipCard {
+.card.flip {
 	transform: rotateY(180deg);
 	transition: transform .2s;
 }
