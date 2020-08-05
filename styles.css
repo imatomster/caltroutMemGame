@@ -26,8 +26,8 @@ header {
 /* Classes */
 /* Memory Game */
 .game {
-	width: 80rem;
-	height: 80rem;
+	width: 70rem;
+	height: 70rem;
 
 	/* Centers the Game to screen */
 	margin: auto;
@@ -43,6 +43,9 @@ header {
 	width: calc(25% - 20px);
 	height: calc(33.33% - 20px);
 	margin: 10px;
+
+	background-color: yellow;
+	border-radius: 10px;
 
 	transform: scale(1);
 	transform-style: preserve-3d;
@@ -64,14 +67,9 @@ header {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-
-	background-color: yellow;
-	border-radius: 10px;
 	backface-visibility: hidden;
 }
 
 .front {
 	transform: rotateY(180deg);
 }
-
-/* IDs */
