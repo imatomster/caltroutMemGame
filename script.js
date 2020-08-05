@@ -76,6 +76,13 @@ function playFlipSound(){
 	flipSound.volume = 1;
 };
 
+// Applause Sound
+function playApplauseSound(){
+	let applauseSound = new Audio("audio/applause_sound.mp3");
+	applauseSound.play();
+	applauseSound.volume = 1;
+};
+
 // Flipping Card Script
 function flipOverCard(){
 	if(twoAreFlipped == false && this != firstCard){
@@ -105,6 +112,7 @@ function checkIsSame(){
 
 // 
 function matchFound(){
+	playApplauseSound();
 	// firstCard.style.border= "thick solid black";
 	// secondCard.style.border = "thick solid black";
 	firstCard.removeEventListener("click", flipOverCard, false);
@@ -116,7 +124,7 @@ function matchFound(){
 	twoAreFlipped = false;
 
 	if(numberOfFlips == chosenCards.length){
-		setTimeout(endGame, 300);
+		setTimeout(endGame, 5000);
 	}
 };
 
