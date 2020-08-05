@@ -1,11 +1,11 @@
 /* Styles */
 html {
 	font-size: 62.5%;
-    font-size: calc(1.6rem + 1vw);
-    font-family: Calibri;
 }
 
 body {
+	font-size: calc(1.6rem + 1vw);
+    font-family: Calibri;
 	background-image: url("pictures/background_river.jpg");
   	background-repeat: no-repeat;
   	background-attachment: fixed;
@@ -26,8 +26,8 @@ header {
 /* Classes */
 /* Memory Game */
 .game {
-	width: 800px;
-	height: 800px;
+	width: 80rem;
+	height: 80rem;
 
 	/* Centers the Game to screen */
 	margin: auto;
@@ -73,3 +73,5 @@ header {
 .front {
 	transform: rotateY(180deg);
 }
+
+/* IDs */

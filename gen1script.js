@@ -1,6 +1,6 @@
 /* Javascript of the Memory Game */
 /* Global Variables */
-var cardArr = document.querySelectorAll(".card");
+const cardArr = document.querySelectorAll(".card");
 var cardClicked = false;
 var firstCard;
 var secondCard;
@@ -9,7 +9,7 @@ var secondCard;
 function playFlipSound(){
 	let flipSound = new Audio("audio/flip_sound.mp3");
 	flipSound.play();
-	flipSound.volume = 0.2;
+	flipSound.volume = 1;
 };
 
 function flipOverCard(){
@@ -19,18 +19,22 @@ function flipOverCard(){
 	if(cardClicked == false){
 		cardClicked = true;
 		firstCard = this;
-		return ;
-	}
-
-	if(cardClicked == true){
+		console.log(firstCard.id);
+	}else if(cardClicked == true){
+		cardClicked = false;
 		secondCard = this;
+		console.log(secondCard.id);
 		isSame();
 	}
 };
 
 function isSame(){
-	// if(document.getElementById("myImg").alt)
-}
+	if(firstCard.id == secondCard.id){
+		console.log("Match");
+		firstCard = null;
+		secondCard = null;
+	}
+};
 
 for(let i = 0; i < cardArr.length; i++){
 	cardArr[i].addEventListener("click", flipOverCard, false);
