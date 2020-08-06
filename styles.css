@@ -6,10 +6,12 @@
 html {
 	font-size: 62.5%;
 	overflow: hidden;
+	position: fixed;
 }
 
 body {
-	font-size: calc(1.6rem + 0.5vw + 0.7vh);
+	position: fixed;
+	font-size: calc(1.6rem + 0.5vw + 1vh);
     font-family: Calibri;
 	background-image: url("pictures/background_river.jpg");
   	background-repeat: no-repeat;
