@@ -1,33 +1,82 @@
 /* Styles */
+* {
+	margin: 0;
+	padding: 0;
+}
 html {
 	font-size: 62.5%;
+	overflow: hidden;
 }
 
 body {
-	font-size: calc(1.6rem + 1vw);
+	font-size: calc(1.6rem + 0.5vw + 0.7vh);
     font-family: Calibri;
 	background-image: url("pictures/background_river.jpg");
   	background-repeat: no-repeat;
   	background-attachment: fixed;
   	background-size: cover;
 
-  	margin: 0;
-    padding: 0;
     width: 100%;
 	height: 100%;
     box-sizing: border-box;
 }
 
+img {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
 header {
+/*	font-size: 1.5em;*/
 	text-align: center;
-	background-color: white;
+}
+
+footer {
+/*	font-size: 1.5em;*/
+	text-align: center;
 }
 
 /* Classes */
+/* Flex Setup */
+.flexSetup {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+  	align-items: stretch;
+  	align-content: stretch;
+  	justify-content: initial;
+
+  	width: 100vw;
+  	height: 100vh;
+}
+
+.flexSetup > section {
+	flex: 1 1 auto;
+}
+
+.topFlex {
+	background-color: orange;
+}
+
+/*.midFlex {
+	background-color: green;
+}*/
+
+.botFlex {
+	background-color: orange;
+}
+
+/* Modal Boxes */
+
+
 /* Memory Game */
 .game {
-	width: 70rem;
-	height: 70rem;
+	width: 21em;
+	height: 21em;
 
 	/* Centers the Game to screen */
 	margin: auto;
