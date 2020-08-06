@@ -68,21 +68,22 @@ function shuffleCards(){
 };
 
 
-/* Memory Game Script */
+/* Sounds */
 // Flip Sound
 function playFlipSound(){
 	let flipSound = new Audio("audio/flip_sound.mp3");
 	flipSound.play();
-	flipSound.volume = 1;
+	flipSound.volume = 0.7;
 };
 
 // Applause Sound
 function playApplauseSound(){
 	let applauseSound = new Audio("audio/applause_sound.mp3");
 	applauseSound.play();
-	applauseSound.volume = 1;
+	applauseSound.volume = 0.7;
 };
 
+/* Memory Game Script */
 // Flipping Card Script
 function flipOverCard(){
 	if(twoAreFlipped == false && this != firstCard){

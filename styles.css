@@ -33,12 +33,12 @@ img {
 }
 
 header {
-/*	font-size: 1.5em;*/
+	font-size: 1.7em;
 	text-align: center;
 }
 
 footer {
-/*	font-size: 1.5em;*/
+	font-size: 1.3em;
 	text-align: center;
 }
 
@@ -61,15 +61,40 @@ footer {
 }
 
 .topFlex {
-	background-color: orange;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+  	align-items: center;
+  	align-content: center;
+  	justify-content: center;
+
+	border-bottom-style: solid;
+	border-bottom-width: .5rem;
+	border-bottom-color: #6D6E71;
+	background-color: lightblue;
 }
 
-/*.midFlex {
-	background-color: green;
-}*/
+.midFlex {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+  	align-items: center;
+  	align-content: center;
+  	justify-content: center;
+}
 
 .botFlex {
-	background-color: orange;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+  	align-items: center;
+  	align-content: center;
+  	justify-content: center;
+
+	border-top-style: solid;
+	border-top-width: .5rem;
+	border-top-color: #6D6E71;
+	background-color: lightblue;
 }
 
 /* Modal Boxes */
@@ -77,8 +102,8 @@ footer {
 
 /* Memory Game */
 .game {
-	width: 21em;
-	height: 21em;
+	width: 35vw;
+	height: 72vh;
 
 	/* Centers the Game to screen */
 	margin: auto;
