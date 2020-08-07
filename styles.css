@@ -78,11 +78,13 @@ img {
 header {
 	font-size: 2.7rem;
 	text-align: center;
+	color: white;
 }
 
 footer {
 	font-size: 1.7rem;
 	text-align: center;
+	color: white;
 }
 
 /* Flex Setup */
@@ -110,7 +112,7 @@ footer {
 	border-bottom-style: solid;
 	border-bottom-width: .2rem;
 	border-bottom-color: #6D6E71;
-	background-color: lightblue;
+	background-color: #0099CC;
 }
 
 .midFlex {
@@ -135,7 +137,7 @@ footer {
 	border-top-style: solid;
 	border-top-width: .2rem;
 	border-top-color: #6D6E71;
-	background-color: lightblue;
+	background-color: #0099CC;
 }
 
 /* Modal Boxes */

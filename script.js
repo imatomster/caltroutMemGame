@@ -185,7 +185,7 @@ function closeModal() {
 function welcomeModal() {
 	var result = "";
 	result += 
-	"<p> Ahoy! Welcome to the fin-tastic Memory Game for Caltrout! </p> <br> <p> There are currently 12 different kinds of fish (Salmon and Trout) that are swimming around just waiting to be matched. </p> <br> <p> Well, what are you waiting for? You wouldn't want to leave the fish to salmon-else! Click the X on the top right to start the game. </p> <br><hr><br> <p> Here are all the possible fish in this lake right now! </p> <br>";
+	"<p> Welcome to the fin-tastic Memory Game for native fish in California! </p> <br> <p> There are currently only 12 different kinds of salmon, trout, steelhead swimming around waiting to be matched. </p> <br> <p> What are you waiting for? Don't leave the fish to salmon-else! Click the X on the top right to start the game. </p> <br><hr><br> <p> Here are all the possible fish in the river right now! </p> <br>";
 
 	for(let i = 0; i < fishArray.length; i++){
 		result +=
