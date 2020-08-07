@@ -114,7 +114,7 @@ footer {
 }
 
 .midFlex {
-	flex: 1 1 auto;
+	flex: 2 1 auto;
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
@@ -163,7 +163,7 @@ footer {
 	margin: auto;
 
 	border: .1rem solid black;
-	background-image: url("pictures/background_water.png");
+	background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(pictures/background_water.jpg);
   	background-size: cover;
   	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -183,7 +183,7 @@ footer {
 }
 
 .modalHeader {
-	background-color: lightgreen;
+	background-color: #0099CC;
 	border-bottom: .05rem solid black;
 
 	text-align: center;
@@ -202,6 +202,7 @@ footer {
 	text-align: center;
 	color: black;
 	font-size: 1.4rem;
+	font-weight: bold;
 	padding: 2rem;
 	overflow: auto;
 }
