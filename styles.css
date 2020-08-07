@@ -5,18 +5,21 @@
 }
 html {
 	font-size: 62.5%;
-	overflow: hidden;
 	position: fixed;
 }
 
 body {
 	position: fixed;
+	overflow: hidden;
 	font-size: calc(1.6rem + 0.5vw + 1vh);
     font-family: Calibri;
 	background-image: url("pictures/background_river.jpg");
   	background-repeat: no-repeat;
   	background-attachment: fixed;
   	background-size: cover;
+  	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 
     width: 100%;
 	height: 100%;
@@ -42,7 +45,6 @@ footer {
 	text-align: center;
 }
 
-/* Classes */
 /* Flex Setup */
 .flexSetup {
 	display: flex;
@@ -56,11 +58,8 @@ footer {
   	height: 100vh;
 }
 
-.flexSetup > section {
-	flex: 1 1 auto;
-}
-
 .topFlex {
+	flex: 1 1 auto;
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
@@ -69,12 +68,13 @@ footer {
   	justify-content: center;
 
 	border-bottom-style: solid;
-	border-bottom-width: .5rem;
+	border-bottom-width: .2em;
 	border-bottom-color: #6D6E71;
 	background-color: lightblue;
 }
 
 .midFlex {
+	flex: 1 1 auto;
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
@@ -84,6 +84,7 @@ footer {
 }
 
 .botFlex {
+	flex: 1 1 auto;
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
@@ -92,29 +93,100 @@ footer {
   	justify-content: center;
 
 	border-top-style: solid;
-	border-top-width: .5rem;
+	border-top-width: .2em;
 	border-top-color: #6D6E71;
 	background-color: lightblue;
 }
 
 /* Modal Boxes */
+.modalBackground {
+	position: fixed;
 
+	display: none;
+	z-index: 1;
+
+	width: 100%;
+	height: 100%;
+	padding-top: 4em;
+	left: 0;
+	top: 0;
+
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modalPopup {
+	position: relative;
+	overflow: auto;
+
+	width: 80%;
+	height: 60%;
+	padding: 0;
+	margin: auto;
+
+	border: .1em solid black;
+	background-color: white;
+
+	-webkit-animation-name: flowFromTop;
+  	-webkit-animation-duration: 0.3s;
+  	animation-name: flowFromTop;
+  	animation-duration: 0.3s
+}
+
+.modalHeader {
+	background-color: lightgreen;
+	border-bottom: .05em solid black;
+
+	text-align: center;
+	color: white;
+	font-size: 1.3em;
+
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+}
+
+.modalText {
+	text-align: center;
+	color: black;
+	font-size: 1em;
+}
+
+.modalX {
+	color: white;
+	font-size: 1.3em;
+}
+
+.modalX:hover {
+	cursor: pointer;
+	color: gray;
+	text-decoration: none;
+}
+
+@-webkit-keyframes flowFromTop {
+	from {top:-4em; opacity:0} 
+	to {top:0; opacity:1}
+}
+
+@keyframes flowFromTop {
+	from {top:-4em; opacity:0} 
+	to {top:0; opacity:1}
+}
 
 /* Memory Game */
 .game {
-	width: 35vw;
+	width: 37vw;
 	height: 72vh;
-
-	/* Centers the Game to screen */
-	margin: auto;
+	background-color: gray;
 
 	display: flex;
 	flex-wrap: wrap;
-	/*background-color: gray;*/
 	perspective: 700px
 }
 
 .card {
+	flex: 1 1 auto;
 	position: relative;
 	width: calc(25% - 20px);
 	height: calc(33.33% - 20px);
@@ -143,9 +215,17 @@ footer {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 
 .front {
 	transform: rotateY(180deg);
+}
+
+/* Classes */
+.disableTextSelect {
+	user-select: none;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
 }

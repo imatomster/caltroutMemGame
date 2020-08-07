@@ -21,8 +21,13 @@ var secondCard;
 // Counter Variables
 var numberOfFlips = 0;
 
+// Modal Variables
+var modal = document.getElementsByClassName("modalBackground")[0];
+var modalX = document.getElementsByClassName("modalX")[0];
+
 /* Setting Up Game through innerHTML */
 window.onload = restart();
+window.onload = setupModal();
 // Restart & Start
 function restart(){
 	chosenCards = [];
@@ -89,6 +94,7 @@ function flipOverCard(){
 	if(twoAreFlipped == false && this != firstCard){
 		this.classList.toggle("flip");
 		playFlipSound();
+		setTimeout(openModal, 300);
 
 		if(cardClicked == false){
 			cardClicked = true;
@@ -116,6 +122,8 @@ function matchFound(){
 	playApplauseSound();
 	// firstCard.style.border= "thick solid black";
 	// secondCard.style.border = "thick solid black";
+	// setTimeout(openModal, 300);
+
 	firstCard.removeEventListener("click", flipOverCard, false);
 	secondCard.removeEventListener("click", flipOverCard, false);
 	numberOfFlips++;
@@ -152,3 +160,25 @@ function endGame(){
 	restart();
 };
 
+/* Modal Script */
+function setupModal() {
+	modalX.addEventListener("click", closeModal, false);
+	window.addEventListener("click", 
+		function(event) { 
+			if(event.target == modal){
+				closeModal();
+			}
+		}, false);
+};
+
+function openModal() {
+	modal.style.display = "block";
+};
+
+function closeModal() {
+	modal.style.display = "none";
+};
+
+function winModal() {
+
+};
