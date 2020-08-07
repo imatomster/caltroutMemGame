@@ -37,9 +37,9 @@ function restart(){
 	var result = "";
 	for(let i = 0; i < chosenCards.length; i++){
 		result += 
-		"<div class='card'; id='"+chosenCards[i]+"'><div class='cardDisplay'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div></div>";
+		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
 		result += 
-		"<div class='card'; id='"+chosenCards[i]+"'><div class='cardDisplay'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div></div>";
+		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
 	}
 
 	document.getElementsByClassName("game")[0].innerHTML = result;
@@ -78,14 +78,14 @@ function shuffleCards(){
 function playFlipSound(){
 	let flipSound = new Audio("audio/flip_sound.mp3");
 	flipSound.play();
-	flipSound.volume = 0.7;
+	flipSound.volume = 1;
 };
 
 // Applause Sound
 function playApplauseSound(){
 	let applauseSound = new Audio("audio/applause_sound.mp3");
 	applauseSound.play();
-	applauseSound.volume = 0.7;
+	applauseSound.volume = 1;
 };
 
 /* Memory Game Script */
@@ -94,7 +94,6 @@ function flipOverCard(){
 	if(twoAreFlipped == false && this != firstCard){
 		this.classList.toggle("flip");
 		playFlipSound();
-		setTimeout(openModal, 300);
 
 		if(cardClicked == false){
 			cardClicked = true;
@@ -120,9 +119,7 @@ function checkIsSame(){
 // 
 function matchFound(){
 	playApplauseSound();
-	// firstCard.style.border= "thick solid black";
-	// secondCard.style.border = "thick solid black";
-	// setTimeout(openModal, 300);
+	setTimeout(openModal, 300);
 
 	firstCard.removeEventListener("click", flipOverCard, false);
 	secondCard.removeEventListener("click", flipOverCard, false);
