@@ -37,9 +37,9 @@ function restart(){
 	var result = "";
 	for(let i = 0; i < chosenCards.length; i++){
 		result += 
-		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
+		"<div class='card'; id='"+chosenCards[i]+"'><div class='cardDisplay'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div></div>";
 		result += 
-		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
+		"<div class='card'; id='"+chosenCards[i]+"'><div class='cardDisplay'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div></div>";
 	}
 
 	document.getElementsByClassName("game")[0].innerHTML = result;
