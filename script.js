@@ -17,6 +17,7 @@ var twoAreFlipped = false;
 // Used to tempararily store the card clicked
 var firstCard;
 var secondCard;
+var cardToDisplay;
 
 // Counter Variables
 var numberOfFlips = 0;
@@ -28,6 +29,8 @@ var modalX = document.getElementsByClassName("modalX")[0];
 /* Setting Up Game through innerHTML */
 window.onload = restart();
 window.onload = setupModal();
+window.onload = welcomeModal();
+
 // Restart & Start
 function restart(){
 	chosenCards = [];
@@ -110,7 +113,7 @@ function flipOverCard(){
 // Checks Match
 function checkIsSame(){
 	if(firstCard.id == secondCard.id){
-		setTimeout(matchFound, 300);
+		setTimeout(matchFound, 200);
 	}else {
 		setTimeout(automaticFlipOverCard, 700);
 	}
@@ -118,8 +121,9 @@ function checkIsSame(){
 
 // 
 function matchFound(){
+	cardToDisplay = firstCard.id;
 	playApplauseSound();
-	setTimeout(openModal, 300);
+	setTimeout(matchModal, 300);
 
 	firstCard.removeEventListener("click", flipOverCard, false);
 	secondCard.removeEventListener("click", flipOverCard, false);
@@ -130,7 +134,7 @@ function matchFound(){
 	twoAreFlipped = false;
 
 	if(numberOfFlips == chosenCards.length){
-		setTimeout(endGame, 5000);
+		setTimeout(winModal, 700);
 	}
 };
 
@@ -151,6 +155,7 @@ function endGame(){
 	twoAreFlipped = false;
 	firstCard = null;
 	secondCard = null;
+	cardToDisplay = null;
 	numberOfFlips = 0;
 	document.getElementsByClassName("game")[0].innerHTML = "";
 
@@ -174,8 +179,50 @@ function openModal() {
 
 function closeModal() {
 	modal.style.display = "none";
+	document.getElementsByClassName("modalText")[0].innerHTML = "";
 };
 
-function winModal() {
+function welcomeModal() {
+	var result = "";
+	result += 
+	"<p> Ahoy! Welcome to the fin-tastic Memory Game for Caltrout! </p> <br> <p> There are currently 12 different kinds of fish (Salmon and Trout) that are swimming around just waiting to be matched. </p> <br> <p> Well, what are you waiting for? You wouldn't want to leave the fish to salmon-else! Click the X on the top right to start the game. </p> <br><hr><br> <p> Here are all the possible fish in this lake right now! </p> <br>";
 
+	for(let i = 0; i < fishArray.length; i++){
+		result +=
+		"<div class='modalCardContainer'> <figure class='modalCard' style='width: 5.7rem; height: 8rem;'> <img style='width: 5.7rem; height: 8rem;' src='pictures/fish/"+fishArray[i]+".png' alt='"+fishArray[i]+"'> </figure> <figcaption> Fish </figcaption> </div>";
+
+	}
+
+	document.getElementsByClassName("modalText")[0].innerHTML = result;
+	setTimeout(openModal, 300);
+};
+
+function matchModal() {
+	var result = "";
+	result += 
+	"<p> You reeled in a match! </p> <br> <p> Let's check out what fish it is! </p> <br> <p> Click the X on the top right to continue the game. </p> <br><hr><br> <p> You caught a FISH </p> <br>";
+
+	result +=
+	"<div class='modalCardContainer'> <figure class='modalCard'> <img src='pictures/fish/"+cardToDisplay+".png' alt='"+cardToDisplay+"'> </figure> <figcaption  style='font-size: 1.4rem;'> FISH </figcaption> </div>";
+
+
+	document.getElementsByClassName("modalText")[0].innerHTML = result;
+	setTimeout(openModal, 300);
+}
+
+function winModal() {
+	var result = "";
+	result += 
+	"<p> You did it! </p> <br> <p> Thank you for playing Caltrout Memory Game </p> <br> <p> If you want to play again, click the X on the top right to restart the game. </p> <br><hr><br> <p> Here's a recap of the fish you just caught! </p> <br>";
+
+	for(let i = 0; i < chosenCards.length; i++){
+		result +=
+		"<div class='modalCardContainer'> <figure class='modalCard' style='width: 5.7rem; height: 8rem;'> <img style='width: 5.7rem; height: 8rem;' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'> </figure> <figcaption> Fish </figcaption> </div>";
+
+	}
+
+	document.getElementsByClassName("modalText")[0].innerHTML = result;
+	setTimeout(openModal, 300);
+
+	endGame();
 };

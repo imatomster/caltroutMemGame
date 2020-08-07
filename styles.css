@@ -156,20 +156,30 @@ footer {
 
 .modalPopup {
 	position: relative;
-	overflow: auto;
 
 	width: 80%;
-	height: 60%;
+	height: 75%;
 	padding: 0;
 	margin: auto;
 
 	border: .1rem solid black;
-	background-color: white;
+	background-image: url("pictures/background_water.png");
+  	background-size: cover;
+  	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 
 	-webkit-animation-name: flowFromTop;
   	-webkit-animation-duration: 0.3s;
   	animation-name: flowFromTop;
-  	animation-duration: 0.3s
+  	animation-duration: 0.3s;
+
+  	display: flex;
+  	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: stretch;
+	align-content: stretch;
+	justify-content: stretch;
 }
 
 .modalHeader {
@@ -178,7 +188,7 @@ footer {
 
 	text-align: center;
 	color: white;
-	font-size: 2rem;
+	font-size: 2.2rem;
 
 	display: flex;
 	flex-wrap: nowrap;
@@ -188,9 +198,12 @@ footer {
 }
 
 .modalText {
+	height: 100%;
 	text-align: center;
 	color: black;
-	font-size: 1rem;
+	font-size: 1.4rem;
+	padding: 2rem;
+	overflow: auto;
 }
 
 .modalX {
@@ -202,6 +215,33 @@ footer {
 	cursor: pointer;
 	color: gray;
 	text-decoration: none;
+}
+
+.modalCardContainer {
+	width: auto;
+	height: auto;
+	display: inline-block;
+	margin: 0.5rem;
+}
+
+.modalCard {
+	vertical-align: top;
+    display: inline-block;
+    text-align: center;
+	width: 8.33rem;
+	height: 11.67rem;
+	background-color: yellow;
+	border-radius: .5rem;
+}
+
+.modalCard > img {
+	width: 8.33rem;
+	height: 11.67rem;
+}
+
+.modalCardContainer > figcaption {
+	display: block;
+	font-size: 1rem;
 }
 
 @-webkit-keyframes flowFromTop {
