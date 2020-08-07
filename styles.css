@@ -230,7 +230,7 @@ footer {
     text-align: center;
 	width: 8.33rem;
 	height: 11.67rem;
-	background-color: yellow;
+	background-color: white;
 	border-radius: .5rem;
 }
 
@@ -270,7 +270,7 @@ footer {
 	width: 8.33rem;
 	height: 11.67rem;
 
-	background-color: yellow;
+	background-color: white;
 	border-radius: .5rem;
 
 	transform: scale(1);
@@ -280,7 +280,7 @@ footer {
 
 .card > img{
 	width: 8.33rem;
-	height: 11.67rem;
+	height: 10rem;
 }
 
 .card:hover {
