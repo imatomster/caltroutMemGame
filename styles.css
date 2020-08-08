@@ -15,30 +15,49 @@ html {
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px){
 	html{
-    	font-size: 12px;
+    	font-size: 11px;
   	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px){
 	html{
-    	font-size: 14px;
+    	font-size: 13px;
   	}
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px){
 	html{
-    	font-size: 16px;
+    	font-size: 14px;
   	}
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px){
 	html{
+    	font-size: 15px;
+  	}
+}
+
+@media only screen and (min-width : 1400px){
+	html{
+    	font-size: 16px;
+  	}
+}
+
+@media only screen and (min-width : 1600px){
+	html{
+    	font-size: 17px;
+  	}
+}
+
+@media only screen and (min-width : 2000px){
+	html{
     	font-size: 18px;
   	}
 }
+
 
 /* Styles */
 * {
