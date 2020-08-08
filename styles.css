@@ -296,7 +296,6 @@ footer {
 	margin: auto;
 	width: 8.33rem;
 	height: 11.67rem;
-	z-index: 0;
 
 	background-color: white;
 	border-radius: .5rem;
@@ -361,6 +360,15 @@ footer {
 	-o-transition: transform .2s;
 }
 
+.card.flip > .front {
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+  	-ms-transform: rotateY(-180deg);
+  	-o-transform: rotateY(-180deg);
+
+}
+
 .front, .back {
 	position: absolute;
     clear: both;
@@ -381,16 +389,11 @@ footer {
 }
 
 .front {
-	z-index: -1;
 	transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
   	-ms-transform: rotateY(180deg);
   	-o-transform: rotateY(180deg);
-}
-
-.back {
-	z-index: 1;
 }
 
 /* Classes */
