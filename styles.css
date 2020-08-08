@@ -293,7 +293,7 @@ footer {
 .card:hover {
 	transform: scale(0.96);
 	transition: transform .2s;
-	-webkit-transform: rotateY(180deg);
+	-webkit-transform: scale(0.96);
 	-webkit-transition: transform .2s;
 	cursor: pointer;
 }
