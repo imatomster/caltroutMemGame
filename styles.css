@@ -264,8 +264,12 @@ footer {
 
 	display: flex;
 	flex-wrap: wrap;
-	perspective: 38rem;
-	-webkit-perspective: 38rem;
+
+	perspective:38rem;
+	-webkit-perspective:38rem;
+    -moz-perspective:38rem;
+    -ms-perspective:38rem;
+    -o-perspective:38rem;
 }
 
 .card {
@@ -277,53 +281,91 @@ footer {
 	background-color: white;
 	border-radius: .5rem;
 
-	transform: scale(1);
-	transform-style: preserve-3d;
-	transition: transform .2s;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
 
+	transform: scale(1);
 	-webkit-transform: scale(1);
-	-webkit-transform-style: preserve-3d;
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+
+	transition: transform .2s;
 	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
 }
 
 .card > img{
+	position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 	width: 8.33rem;
 	height: 11rem;
 }
 
 .card:hover {
-	transform: scale(0.96);
-	transition: transform .2s;
-	-webkit-transform: scale(0.96);
-	-webkit-transition: transform .2s;
 	cursor: pointer;
+
+	transform: scale(0.96);
+	-webkit-transform: scale(0.96);
+	-moz-transform: scale(0.96);
+	-ms-transform: scale(0.96);
+	-o-transform: scale(0.96);
+
+	transition: transform .2s;
+	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
 }
 
 .card.flip {
 	transform: rotateY(180deg);
-	transition: transform .2s;
 	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+  	-ms-transform: rotateY(180deg);
+  	-o-transform: rotateY(180deg);
+
+	transition: transform .2s;
 	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
 }
 
 .front, .back {
 	position: absolute;
+    clear: both;
 	width: 100%;
 	height: 100%;
-	-moz-backface-visibility:hidden;
+
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
     -ms-backface-visibility:hidden;
     -o-backface-visibility:hidden;
-
-	-webkit-perspective: 0;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0,0,0);
-    visibility:visible;
-    backface-visibility: hidden;
+    
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
 }
 
 .front {
-	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+  	-ms-transform: rotateY(180deg);
+  	-o-transform: rotateY(180deg);
 }
 
 /* Classes */

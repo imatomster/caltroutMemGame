@@ -1,8 +1,9 @@
 /* Javascript of the Memory Game */
 /* Global Variables */
 // Array of Fish source name
-const fishArray = ["bull_trout", "california_golden_trout", "chinook_salmon", "chum_salmon","coastal_cutthroat_trout", "coastal_rainbow_trout", 
+var fishArray = ["bull_trout", "california_golden_trout", "chinook_salmon", "chum_salmon","coastal_cutthroat_trout", "coastal_rainbow_trout", 
 	 "coho_salmon", "eagle_lake_rainbow_trout", "goose_lake_redband_trout", "kern_river_rainbow_trout", "lahontan_cutthroat_trout", "pink_salmon"];
+var fishArrayNames = [];
 
 // Array of the chosen fish source names (Pulled from fishArray through pickCards())
 var chosenCards = [];
@@ -30,6 +31,10 @@ var modalX = document.getElementsByClassName("modalX")[0];
 window.onload = restart();
 window.onload = setupModal();
 window.onload = welcomeModal();
+
+function setUp() {
+
+}
 
 // Restart & Start
 function restart(){
@@ -123,7 +128,7 @@ function checkIsSame(){
 function matchFound(){
 	cardToDisplay = firstCard.id;
 	playApplauseSound();
-	setTimeout(matchModal, 300);
+	matchModal();
 
 	firstCard.removeEventListener("click", flipOverCard, false);
 	secondCard.removeEventListener("click", flipOverCard, false);
@@ -134,7 +139,7 @@ function matchFound(){
 	twoAreFlipped = false;
 
 	if(numberOfFlips == chosenCards.length){
-		setTimeout(winModal, 700);
+		winModal();
 	}
 };
 
@@ -213,7 +218,7 @@ function matchModal() {
 function winModal() {
 	var result = "";
 	result += 
-	"<p> You did it! </p> <br> <p> Thank you for playing Caltrout Memory Game </p> <br> <p> If you want to play again, click the X on the top right to restart the game. </p> <br><hr><br> <p> Here's a recap of the fish you just caught! </p> <br>";
+	"<p> You did it! </p> <br> <p> Thank you for playing Caltrout Memory Game. </p> <br> <p> If you want to play again, click the X on the top right to restart the game. </p> <br><hr><br> <p> Here's a recap of the fish you just caught! </p> <br>";
 
 	for(let i = 0; i < chosenCards.length; i++){
 		result +=
@@ -224,5 +229,5 @@ function winModal() {
 	document.getElementsByClassName("modalText")[0].innerHTML = result;
 	setTimeout(openModal, 300);
 
-	endGame();
+	setTimeout(endGame, 500);
 };
