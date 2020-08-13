@@ -1,0 +1,2 @@
+export default var fishArray = ["bull_trout", "california_golden_trout", "chinook_salmon", "chum_salmon","coastal_cutthroat_trout", "coastal_rainbow_trout", 
+	 "coho_salmon", "eagle_lake_rainbow_trout", "goose_lake_redband_trout", "kern_river_rainbow_trout", "lahontan_cutthroat_trout", "pink_salmon"];

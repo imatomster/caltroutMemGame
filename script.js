@@ -1,8 +1,7 @@
 /* Javascript of the Memory Game */
 /* Global Variables */
 // Array of Fish source name
-var fishArray = ["bull_trout", "california_golden_trout", "chinook_salmon", "chum_salmon","coastal_cutthroat_trout", "coastal_rainbow_trout", 
-	 "coho_salmon", "eagle_lake_rainbow_trout", "goose_lake_redband_trout", "kern_river_rainbow_trout", "lahontan_cutthroat_trout", "pink_salmon"];
+import fishArray from "data.js";
 var fishArrayNames = [];
 
 var fishArrayDescription = [];
@@ -11,7 +10,7 @@ var fishArrayWebsites = [];
 var chosenCards = [];
 var chosenFishArrayNames = [];
 
-// Array of the actual cards displayed (Pulled from HTML after added)
+// Array of the actual card objects displayed (Pulled from HTML after added)
 var cardArray = [];
 
 // Boolean to enable count two clicks
