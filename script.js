@@ -5,8 +5,12 @@ var fishArray = ["bull_trout", "california_golden_trout", "chinook_salmon", "chu
 	 "coho_salmon", "eagle_lake_rainbow_trout", "goose_lake_redband_trout", "kern_river_rainbow_trout", "lahontan_cutthroat_trout", "pink_salmon"];
 var fishArrayNames = [];
 
+var fishArrayDescription = [];
+var fishArrayWebsites = [];
 // Array of the chosen fish source names (Pulled from fishArray through pickCards())
 var chosenCards = [];
+var chosenFishArrayNames = [];
+
 // Array of the actual cards displayed (Pulled from HTML after added)
 var cardArray = [];
 
@@ -27,15 +31,31 @@ var numberOfFlips = 0;
 var modal = document.getElementsByClassName("modalBackground")[0];
 var modalX = document.getElementsByClassName("modalX")[0];
 
-/* Setting Up Game through innerHTML */
-window.onload = restart();
-window.onload = setupModal();
-window.onload = welcomeModal();
+/* Onload Call on Function */
+window.onload = loadUpGame();
 
-function setUp() {
+// Load up game
+function loadUpGame() {
+	fillFishArrayNames();
 
-}
+	restart();
+	setupModal();
+	welcomeModal();
+};
 
+/* Setting up Arrays */
+// Fill Fish Array Names
+function fillFishArrayNames() {
+	var spaceStr = "";
+	var upperStr = "";
+	for(let i = 0; i < fishArray.length; i++){
+		spaceStr = fishArray[i].replace(/_/g, " ");
+		upperStr = spaceStr.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
+		fishArrayNames.push(upperStr);
+	}
+};
+
+/* Setting up Game */
 // Restart & Start
 function restart(){
 	chosenCards = [];
@@ -45,9 +65,9 @@ function restart(){
 	var result = "";
 	for(let i = 0; i < chosenCards.length; i++){
 		result += 
-		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
+		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenFishArrayNames[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
 		result += 
-		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
+		"<div class='card'; id='"+chosenCards[i]+"'><img class='front' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenFishArrayNames[i]+"'><img class='back' src='pictures/logo.png' alt='Logo'></div>";
 	}
 
 	document.getElementsByClassName("game")[0].innerHTML = result;
@@ -68,6 +88,7 @@ function pickCards(){
 
 		if(chosenCards.includes(fishArray[randomIndex]) == false){
 			chosenCards.push(fishArray[randomIndex]);
+			chosenFishArrayNames.push(fishArrayNames[randomIndex]);
 		}
 	}
 }
@@ -124,7 +145,7 @@ function checkIsSame(){
 	}
 };
 
-// 
+// Exectures match found
 function matchFound(){
 	cardToDisplay = firstCard.id;
 	playApplauseSound();
@@ -155,6 +176,7 @@ function automaticFlipOverCard(){
 
 function endGame(){
 	chosenCards = [];
+	chosenFishArrayNames = [];
 	cardArray = [];
 	cardClicked = false;
 	twoAreFlipped = false;
@@ -192,11 +214,13 @@ function welcomeModal() {
 	result += 
 	"<p> Welcome to the fin-tastic Memory Game for native fish in California! </p> <br> <p> There are currently only 12 different kinds of salmon, trout, steelhead swimming around waiting to be matched. </p> <br> <p> What are you waiting for? Don't leave the fish to salmon-else! Click the X on the top right to start the game. </p> <br><hr><br> <p> Here are all the possible fish in the river right now! </p> <br>";
 
+	result += "<div class='modalCardOverall'>";
 	for(let i = 0; i < fishArray.length; i++){
 		result +=
-		"<div class='modalCardContainer'> <figure class='modalCard' style='width: 5.7rem; height: 8rem;'> <img style='width: 5.7rem; height: 8rem;' src='pictures/fish/"+fishArray[i]+".png' alt='"+fishArray[i]+"'> </figure> <figcaption> Fish </figcaption> </div>";
+		"<div class='modalCardContainer' style='width: 5.9rem;'> <figure class='modalCard' style='width: 5.7rem; height: 8rem;'> <img style='width: 5.7rem; height: 8rem;' src='pictures/fish/"+fishArray[i]+".png' alt='"+fishArrayNames[i]+"'> </figure> <figcaption>"+fishArrayNames[i]+"</figcaption> </div>";
 
 	}
+	result += "</div>";
 
 	document.getElementsByClassName("modalText")[0].innerHTML = result;
 	setTimeout(openModal, 300);
@@ -222,7 +246,7 @@ function winModal() {
 
 	for(let i = 0; i < chosenCards.length; i++){
 		result +=
-		"<div class='modalCardContainer'> <figure class='modalCard' style='width: 5.7rem; height: 8rem;'> <img style='width: 5.7rem; height: 8rem;' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenCards[i]+"'> </figure> <figcaption> Fish </figcaption> </div>";
+		"<div class='modalCardContainer'> <figure class='modalCard' style='width: 5.7rem; height: 8rem;'> <img style='width: 5.7rem; height: 8rem;' src='pictures/fish/"+chosenCards[i]+".png' alt='"+chosenFishArrayNames[i]+"'> </figure> <figcaption>"+fishArrayNames[i]+"</figcaption> </div>";
 
 	}
 

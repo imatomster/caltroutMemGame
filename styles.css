@@ -228,6 +228,10 @@ footer {
 	overflow: auto;
 }
 
+.modalText > p{
+	background: rgba(255,255,255,0.60);
+}
+
 .modalX {
 	color: white;
 	font-size: 2rem;
@@ -239,8 +243,16 @@ footer {
 	text-decoration: none;
 }
 
+.modalCardOverall {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+  	align-content: center;
+  	justify-content: center;
+}
+
 .modalCardContainer {
-	width: auto;
+	width: 8.5rem;
 	height: auto;
 	display: inline-block;
 	margin: 0.5rem;
