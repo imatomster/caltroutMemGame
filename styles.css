@@ -184,7 +184,7 @@ footer {
 	margin: auto;
 
 	border: .1rem solid black;
-	background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(pictures/background_water.jpg);
+	background-image: url("pictures/background_water.jpg");
   	background-size: cover;
   	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -208,6 +208,7 @@ footer {
 	border-bottom: .05rem solid black;
 
 	text-align: center;
+	font-weight: bold;
 	color: white;
 	font-size: 2.2rem;
 
@@ -223,7 +224,6 @@ footer {
 	text-align: center;
 	color: black;
 	font-size: 1.4rem;
-	font-weight: bold;
 	padding: 2rem;
 	overflow: auto;
 }
@@ -275,7 +275,9 @@ footer {
 
 .modalCardContainer > figcaption {
 	display: block;
-	font-size: 1rem;
+	background: rgba(255,255,255,0.60);
+	border-radius: .5rem;
+	font-size: 1.3rem;
 }
 
 @-webkit-keyframes flowFromTop {
@@ -332,6 +334,7 @@ footer {
 }
 
 .card > img{
+	image-rendering: -webkit-optimize-contrast;
 	position: absolute;
     margin: auto;
     top: 0;
